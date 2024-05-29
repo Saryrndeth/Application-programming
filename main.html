@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="test.js"></script>
 </head>
 <body>
     <form>
-        <p><textarea cols="50", rows="10" class="code"></textarea></p>
-        <p><input type="submit", value="ㄱㄱ"></p>
+        <p><textarea cols="50", rows="10" class="code", onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;};"></textarea></p>
     </form>
+    <input type="submit", value="ㄱㄱ", id="button"><br>
+    <div class="response"></div>
+    <script src="test.js"></script>
 </body>
 </html>
