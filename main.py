@@ -20,7 +20,6 @@ def index():
    elif request.method == 'POST':
        print(request.get_json())
        if 'command' in request.get_json():
-           print(request.get_json())
            if request.get_json()['target'] == 'py':
                output = subprocess.run('py execute.py ' + request.get_json()['command'], capture_output=True, shell=True, text=True)
                print(output.stdout)
